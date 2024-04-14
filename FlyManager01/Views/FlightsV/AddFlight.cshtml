@@ -1,0 +1,153 @@
+﻿@model FlyManager01.Models.Flights
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "AddFlight";
+}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<style>
+    .infoFromTo {
+        /*background-color: cadetblue;*/
+        display: flex;
+        flex-direction: row;
+    }
+    .iconArr{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+</style>
+
+<div class="first">
+    <div class="second">
+        <p class="textP">Add a flight</p>
+        <form>
+            <div class="infoFromTo">
+                <div class="from">
+                    <p><b>Departure:</b></p>
+                    @*<label for="pBuisness" class="control-label">City:</label>*@
+                    <label asp-for="FromCity" id="fromFlghtlb">From:</label>
+                    <input asp-for="FromCity" id="fromFlghtBT" required placeholder="City">
+                    <span asp-validation-for="FromCity" class="text-danger"></span>
+                    <br><br>
+
+                    <label asp-for="FromDate" id="fromFlghtlb">From:</label>
+                    <input asp-for="FromDate" id="fromFlghtBT" required placeholder="City">
+                    <span asp-validation-for="FromDate" class="text-danger"></span>
+                    <br><br>
+
+                    @*<label for="pBuisness" class="control-label">Date:</label>*@
+                    <label asp-for="FromTime" id="fromFlghtlb"></label>
+                    <input asp-for="FromTime" id="fromFlghtBT" required placeholder="City">
+                    <span asp-validation-for="FromTime" class="text-danger"></span>
+
+                </div>
+                <div class="iconArr">
+                    <span class="material-symbols-outlined">
+                        arrow_right_alt
+                    </span>
+                </div>
+                <div class="to">
+                    <p><b>Return:</b></p>
+                    <label asp-for="ToCity" id="fromFlghtlb">From:</label>
+                    <input asp-for="ToCity" id="fromFlghtBT" required placeholder="City">
+                    <span asp-validation-for="ToCity" class="text-danger"></span>
+                    <br><br>
+
+                    <label asp-for="ToDate" id="fromFlghtlb">From:</label>
+                    <input asp-for="ToDate" id="fromFlghtBT" required placeholder="City">
+                    <span asp-validation-for="ToDate" class="text-danger"></span>
+                    <br><br>
+
+                    @*<label for="pBuisness" class="control-label">Date:</label>*@
+                    <label asp-for="ToTime" id="fromFlghtlb"></label>
+                    <input asp-for="ToTime" id="fromFlghtBT" required placeholder="City">
+                    <span asp-validation-for="ToTime" class="text-danger"></span>
+                    <br /><br />
+                </div>
+            </div>
+            <div class="infoOter">
+               @* <label for="pBuisness" class="control-label">Type Plane:</label>*@
+                <label asp-for="TypePlane" class="control-label"></label>
+                <input asp-for="TypePlane" class="form-control" />
+                <span asp-validation-for="TypePlane" class="text-danger"></span>
+                <br><br>
+
+               @* <label for="pBuisness" class="control-label">Pilot:</label>*@
+                <label asp-for="FirstPilot" class="control-label"></label>
+                <input asp-for="FirstPilot" class="form-control" />
+                <span asp-validation-for="FirstPilot" class="text-danger"></span>
+                <br><br>
+
+              @*  <label for="pBuisness" class="control-label">Number plane:</label>*@
+                <label asp-for="NumberPlane" class="control-label"></label>
+                <input asp-for="NumberPlane" class="form-control" />
+                <span asp-validation-for="NumberPlane" class="text-danger"></span>
+                <br><br>
+
+               @* <label for="numPlace" id="numPlaceLb">Number of places:</label>
+                <br>
+                <select name="numPlace" id="numPlace" class="numPlaceSe">
+                    <option value="" disabled selected hidden>Number of places</option>
+                </select>
+                <script>
+                    const numPlace = document.getElementById("numPlace");
+                    for (let i = 100; i <= 1000; i++) {
+                        const option = document.createElement("option");
+                        option.value = i;
+                        option.text = i;
+                        numPlace.appendChild(option);
+                    }
+                </script>
+                <br><br>*@
+                <label for="pBuisness" class="control-label">Ticket number:</label>
+                @*<label asp-for="OrdinaryTicket" class="control-label"></label>*@
+                <input asp-for="OrdinaryTicket" class="form-control" />
+                <span asp-validation-for="OrdinaryTicket" class="text-danger"></span>
+                <br /><br />
+
+                <label for="pBuisness" class="control-label">Ticket prise:</label>
+                @*<label asp-for="Ticket" class="control-label"></label>*@
+                <input asp-for="Ticket" class="form-control" />
+                <span asp-validation-for="Ticket" class="text-danger"></span>
+                @* <label for="priceBuisTicet">Prise for ordinary ticket:</label>
+                <input type="text" id="priceBuisTicet" name="priceBuisTicet" required placeholder="Prise">*@
+                @*<span class="material-symbols-outlined">
+                euro
+                </span>*@
+                <br><br>
+
+                <label for="pBuisness" class="control-label">Buisness class ticket number:</label>
+                @*<label asp-for="BuisnessClass" class="control-label"></label>*@
+                <input asp-for="BuisnessClass" class="form-control" />
+                <span asp-validation-for="BuisnessClass" class="text-danger"></span>
+                <br><br>
+                @* <label for="buisnesSeat">Business class seats:</label>
+                <br>
+                <select name="buisnesSeat" id="buisnesSeat" class="buisnesSeat">
+                <option value="" disabled selected hidden>Seats</option>
+                </select>
+                <script>
+                const buisnesSeat = document.getElementById("buisnesSeat");
+                for (let i = 10; i <= 100; i++) {
+                const option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                buisnesSeat.appendChild(option);
+                }
+                </script>
+                <br><br>*@
+
+                <label for="pBuisness" class="control-label">Buisness class ticket prise:</label>
+                <input asp-for="PriceBuisness" class="form-control" />
+                <span asp-validation-for="PriceBuisness" class="text-danger"></span>
+                @*<span class="material-symbols-outlined">
+                    euro
+                </span>*@
+                <br><br>
+                
+            </div>
+            <input type="submit" class="button" value="Add">
+        </form>
+    </div>
+</div>

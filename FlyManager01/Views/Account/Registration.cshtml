@@ -1,0 +1,95 @@
+﻿@using FlyManager01.ViewModals;
+@model RegistrtionVM
+@{
+    ViewData["Title"] = "Registration";
+}
+<style>
+    .right{
+        padding-bottom: 10px;
+    }
+</style>
+
+<div class="first">
+    <div class="second">
+        <p class="registrationText">Registration</p>
+
+        <form asp-action="Registration" class="registrationForm" method="post">
+            <div class="right">
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName" id="name" placeholder="First name" required size="auto">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName" id="name" placeholder="Last name" required size="auto">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="Email"></label>
+                <input asp-for="Email" id="name" placeholder="Email" required size="auto">
+                <span asp-validation-for="Email" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="NickName"></label>
+                <input asp-for="NickName" id="name" placeholder="Nickname" required size="auto">
+                <span asp-validation-for="NickName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="EGN"></label>
+                <input asp-for="EGN" id="name" placeholder="EGN" required size="auto">
+                <span asp-validation-for="EGN" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="Password"></label>
+                <input asp-for="Password" id="name" placeholder="Password" required size="auto">
+                <span asp-validation-for="Password" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="ConformPassword"></label>
+                <input asp-for="ConformPassword" id="name" placeholder="Conform Password" required size="auto">
+                <span asp-validation-for="ConformPassword" class="text-danger"></span>
+                <br>
+            </div>
+            <div class="left">
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber" id="name" placeholder="Phone Number" required size="auto">
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="Adress"></label>
+                <textarea asp-for="Adress" id="name" placeholder="Adress" required size="auto"></textarea>
+                <span asp-validation-for="Adress" class="text-danger"></span>
+
+                <br><br />
+
+                <label asp-for="Job">Name:</label>
+                <input asp-for="Job" id="name" placeholder="Position" required size="auto">
+                
+                @*<label for="position" class="pos">Position:</label>
+                <div class="posOp">
+                    @*<select asp-for="Job" id="position" name="position" class="selected" required>
+                        <option value="" disabled selected hidden>Position</option>
+                        @foreach(var item in Model.Job.Job)
+                        {
+                            <option value="@Html.DisplayFor(modelItem => item)">Manager</option>
+                        }
+                    </select>*
+                    <span asp-validation-for="Job" class="text-danger"></span>
+                    <br>
+                </div>*@
+                <p class="agree">
+                    <input type="checkbox" name="agreement" class="agreement" required />I agree to the Private policy<br />
+                </p><br>
+            </div>
+
+                <input  type="submit" class="button" value="Register">
+
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

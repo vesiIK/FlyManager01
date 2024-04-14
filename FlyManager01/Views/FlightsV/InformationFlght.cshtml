@@ -1,0 +1,52 @@
+﻿@model FlyManager01.Models.Flights
+
+@{
+    ViewData["Title"] = "InformationFlght";
+}
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FromCity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FromCity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FromDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FromDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ToDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ToDate)
+        </dd>
+        <dt class="col-sm-2">
+            Time
+        </dt>
+        <dd class="col-sm-10">
+            @*@Math.Abs()*@
+        </dd>
+        <dt class="col-sm-2">
+            Buisness class ticket:
+        </dt>
+        <dd class="col-sm-10"> 
+            @Html.DisplayFor(model => model.PriceBuisness)
+        </dd>
+        <dt class="col-sm-2">
+            Prise:
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ticket)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Tickts" asp-route-id="@Model?.Id">Buy</a> |
+    <a asp-action="Tickts">Back to List</a>
+</div>

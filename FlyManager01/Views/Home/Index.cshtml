@@ -1,0 +1,140 @@
+﻿@model IEnumerable<FlyManager01.Models.Flights>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,500,0,0" />
+<style>
+ .flyght{
+            border: 2px solid;
+            border-radius: 12px;
+            /*box-shadow: 7px 7px 5px lightslategray;*/
+            display: flex;
+            margin-right: 40px;
+            margin-left: 60px;
+        }
+        #row{
+            flex: 1;
+            padding: 10px;
+            /*border: 1px solid #ddd;*/
+            font-size: 19px;
+            padding-bottom: 5px;
+        }
+        #smal-row{
+            flex: 0.2;
+            padding: 15px;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            align-items: center;
+        }
+        .lacIc{
+            font-size: 120px;
+            color: rgb(0, 153, 102);
+            padding-bottom: 2px;
+        }
+        .no-fly{
+            display: flex;
+            margin-right: 40px;
+            margin-left: 60px;
+            justify-content: center;
+        }
+        #title{
+            /*color: white;*/
+            font-size: 30px;
+        }
+        .name{
+            text-align: center;
+        }
+</style>
+
+    <div class="first">
+    @*<div class="enter"> 
+            <a href="login.html">
+            <button id="button">Log in</button>
+            </a>
+        </div>*@
+        <div class="name">
+            <strong id="title">Fly Manager</strong>
+        </div>
+    </div>
+    <hr />
+    <div class="filter">
+
+         <div id="filterInput">
+            <p id="filterText">Filter</p>
+
+            <p>
+        From: <input type="text" placeholder="From">
+        <i class="fa-solid fa-arrow-right"></i>
+        To: <input type="text" placeholder="To">
+
+        <label for="birthday">Date going: </label>
+        <input type="date" id="birthday" name="birthday">
+
+        <label for="birthday">Date return: </label>
+        <input type="date" id="birthday" name="birthday">
+        </p></div><p>
+        <button class="filtbutton"><span class="material-symbols-outlined">
+            search
+            </span></button>
+        </p></div>
+        <hr />
+    
+
+
+    <!--<div class="plus">
+        <a href="" id="pluslink">
+            <div class="plusShadow">
+              <button><i class="fa-solid fa-circle-plus icon"></i></button>
+              <p id="add">Add</p>
+            </div>
+       </a>
+    </div>-->
+
+@if(Model != null)
+{
+    @foreach (var item in Model) {
+        <div class="flyght">
+            <div id="smal-row">
+             <span class="material-symbols-outlined lacIc">
+                location_on
+                    </span>
+            </div>
+            <div id="row">
+                <p id="polet">
+                <b>@Html.DisplayNameFor(itemModel => item.FromCity)</b></p>
+                <ul class="no-bullets">
+
+                    <li>Date of departure: @Html.DisplayNameFor(itemModel => item.FromDate)</li>
+                    <li>Time: @Html.DisplayNameFor(itemModel => item.FromTime)</li>
+                </ul>
+
+            </div>
+            <p id="polet"> <i class="fa-solid fa-arrow-right"></i></p>
+
+            <div id="row"> 
+                <p id="polet">
+                    <b>@Html.DisplayNameFor(itemModel => item.ToCity)</b></P>
+                <ul class="no-bullets">
+                    <li>Date of landing: @Html.DisplayNameFor(itemModel => item.ToDate)</li>
+                    <li>Time: @Html.DisplayNameFor(itemModel => item.ToTime)</li>
+                </ul> 
+
+            </div>
+            <div id="row">
+                <ul class="no-bullets last">
+                    <li>Prise: @Html.DisplayNameFor(itemModel => item.Ticket)€</li>
+                    <li><i id="none">Buisness Class</i>@Html.DisplayNameFor(itemModel => item.PriceBuisness)€</li>
+                    <li>Type of aircraft: @Html.DisplayNameFor(itemModel => item.TypePlane)€</li>
+                </ul> 
+                <button class="derail">Details</button>
+            </div>
+        </div>
+    }
+}
+else{
+    <div class="no-fly">
+        <h2>No Flights for now</h2>
+    </div>
+}

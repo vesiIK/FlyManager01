@@ -1,0 +1,60 @@
+﻿@using FlyManager01.ViewModals;
+@model LoginVM
+@{
+    ViewData["Title"] = "LogIn";
+}
+<style>
+    .first {
+        line-height: 1.8;
+    }
+    .name{
+        padding-bottom: 10px;
+    }
+    .pass {
+        padding-bottom: 10px;
+    }
+</style>
+
+<body>
+    <div class="first">
+        <p class="loginId"><h2>Log in</h2></p>
+
+        <form asp-action="LogIn" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="name">
+                <label asp-for="UserName">Name:</label>
+                <input asp-for="UserName" id="name" placeholder="Email/Nickname" required size="auto">
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="pass">
+                <label asp-for="Password">Password:</label>
+                <input asp-for="Password" id="password" name="password" placeholder="Password" required>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div>
+                <label class="from-chek-lable">
+                    <input asp-for="RememberMe" class="from-chek-input"/> @Html.DisplayNameFor(a=>a.RememberMe)
+                </label>
+            </div>
+
+            <p class="button">
+                    <input type="submit" class="button" value="Log in">
+            </p>
+        
+        <p class="textFor">
+            Don't remember your password then click:
+                <a class="forpass">Forgotten password</a> <br>
+            @*<a asp-action="ForgotPassword" class="forpass">Forgotten password</a> <br>*@
+            If you do not have a registration, click:
+            <a asp-action="Registration">Registration</a>
+            </p>
+        </form>
+    </div>
+</body>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

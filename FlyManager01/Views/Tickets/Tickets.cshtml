@@ -1,0 +1,95 @@
+﻿@model FlyManager01.Models.Person
+
+@{
+    ViewData["Title"] = "Tickets";
+}
+
+<h1>Reservation</h1>
+
+<div class="first">
+    <div>
+        Some Teext
+    </div>
+    <div>
+        <i class="fa-solid fa-arrow-right"></i>
+    </div>
+    <div>
+        Some text
+    </div>
+</div>
+<div class="first">
+    <form asp-action="Index">
+        <div class="second">
+            <p class="registrationText">Person</p>
+            <div class="right">
+                <label asp-for="FirstName" id="fromFlghtlb">From:</label>
+                <input asp-for="FirstName" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="MiddleName" id="fromFlghtlb">From:</label>
+                <input asp-for="MiddleName" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="MiddleName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="LastName" id="fromFlghtlb">From:</label>
+                <input asp-for="LastName" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                <br><br>
+
+
+                <label asp-for="EGN" id="fromFlghtlb">From:</label>
+                <input asp-for="EGN" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="EGN" class="text-danger"></span>
+                <label for="egn">EGN:</label>
+                <input type="text" id="egn" name="egn" required placeholder="XXXXXXXX">
+                <br><br>
+            </div>
+            <div class="left">
+                <label asp-for="TelephoneNummer" id="fromFlghtlb">From:</label>
+                <input asp-for="TelephoneNummer" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="TelephoneNummer" class="text-danger"></span>
+                <label for="tel">Telephone:</label>
+                <input type="text" id="tel" name="tel" required placeholder="+359/0 8X XXX XXXX">
+                <br><br>
+
+                <label asp-for="Country" id="fromFlghtlb">From:</label>
+                <input asp-for="Country" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="Country" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="TypeTicket" id="fromFlghtlb">From:</label>
+               @* <input asp-for="TypeTicket" id="fromFlghtBT" required placeholder="City">
+                >*@
+                <div class="adres">
+                    <p class="agree">
+                        <input asp-for="TypeTicket" type="radio" class="agreement" required />Ticket {}<br />
+                        <input asp-for="TypeTicket" type="radio" class="agreement" required />Buisness Ticket {}<br />
+                    </p>
+                    <span asp-validation-for="TypeTicket" class="text-danger"></span><br>
+                </div>
+            </div>
+
+            <div class="info">
+                <label asp-for="FirstName" id="fromFlghtlb">From:</label>
+                <input asp-for="FirstName" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="LastName" id="fromFlghtlb">From:</label>
+                <input asp-for="LastName" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                <br><br>
+
+                <label asp-for="PersonAddmin.Email" id="fromFlghtlb">From:</label>
+                <input asp-for="PersonAddmin.Email" id="fromFlghtBT" required placeholder="City">
+                <span asp-validation-for="PersonAddmin.Email" class="text-danger"></span>
+                <br><br>
+
+            </div>
+
+            <input type="submit" class="button" value="Buy">
+        </div>
+    </form>
+
+</div>
