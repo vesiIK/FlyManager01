@@ -103,11 +103,11 @@
             </div>
             <div id="row">
                 <p id="polet">
-                <b>@Html.DisplayFor(itemModel => item.FromCity)</b></p>
+                <b>@Html.DisplayNameFor(itemModel => item.FromCity)</b></p>
                 <ul class="no-bullets">
 
-                    <li>Date of departure: @Html.DisplayFor(itemModel => item.FromDate)</li>
-                    <li>Time: @Html.DisplayFor(itemModel => item.FromTime)</li>
+                    <li>Date of departure: @Html.DisplayNameFor(itemModel => item.FromDate)</li>
+                    <li>Time: @Html.DisplayNameFor(itemModel => item.FromTime)</li>
                 </ul>
 
             </div>
@@ -115,22 +115,20 @@
 
             <div id="row"> 
                 <p id="polet">
-                    <b>@Html.DisplayFor(itemModel => item.ToCity)</b></P>
+                    <b>@Html.DisplayNameFor(itemModel => item.ToCity)</b></P>
                 <ul class="no-bullets">
-                    <li>Date of landing: @Html.DisplayFor(itemModel => item.ToDate)</li>
-                    <li>Time: @Html.DisplayFor(itemModel => item.ToTime)</li>
+                    <li>Date of landing: @Html.DisplayNameFor(itemModel => item.ToDate)</li>
+                    <li>Time: @Html.DisplayNameFor(itemModel => item.ToTime)</li>
                 </ul> 
 
             </div>
             <div id="row">
                 <ul class="no-bullets last">
-                    <li>Prise: @Html.DisplayFor(itemModel => item.Ticket)€</li>
-                    <li><i id="none">Buisness Class:</i>@Html.DisplayFor(itemModel => item.PriceBuisness)€</li>
-                    <li>Type of aircraft: @Html.DisplayFor(itemModel => item.TypePlane)</li>
+                    <li>Prise: @Html.DisplayNameFor(itemModel => item.Ticket)€</li>
+                    <li><i id="none">Buisness Class</i>@Html.DisplayNameFor(itemModel => item.PriceBuisness)€</li>
+                    <li>Type of aircraft: @Html.DisplayNameFor(itemModel => item.TypePlane)€</li>
                 </ul> 
-               <a asp-controller="FlightsV" asp-action="InformationFlght" asp-route-id="@item.Id">
-                Detail
-                </a>
+                <button class="derail">Details</button>
             </div>
         </div>
     }
