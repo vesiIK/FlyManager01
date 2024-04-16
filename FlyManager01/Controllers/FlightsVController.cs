@@ -27,12 +27,7 @@ namespace FlyManager01.Controllers
                           Problem("Entity set 'FlyManagerData.Flights'  is null.");
         }
 
-
-        //public IActionResult InformationFlght()
-        //{
-
-        //}
-        //GET: FlightsV/Details/5
+        // GET: FlightsV/Details/5
         public async Task<IActionResult> InformationFlght(int? id)
         {
             if (id == null || _context.Flights == null)

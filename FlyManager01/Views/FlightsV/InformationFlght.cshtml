@@ -5,7 +5,7 @@
 }
 
 <div>
-    <h4>Details flight</h4>
+    <h4>Movie</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -47,6 +47,6 @@
     </dl>
 </div>
 <div>
-    <a asp-controller="Tickets" asp-action="Tickts" asp-route-id="@Model?.Id">Buy</a> |
-    <a asp-controller="Home" asp-action="Index">Back</a>
+    <a asp-action="Tickts" asp-route-id="@Model?.Id">Buy</a> |
+    <a asp-action="Tickts">Back to List</a>
 </div>

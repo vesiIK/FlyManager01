@@ -12,24 +12,22 @@ namespace FlyManager01.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly FlyManagerData _context;
 
-        public HomeController(ILogger<HomeController> logger, FlyManagerData context)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _context = context;
         }
 
-        //
+        //private readonly FlyManagerData _context;
 
-        //public HomeController()
+        //public HomeController(FlyManagerData context)
         //{
-        //    
+        //    _context = context;
         //}
 
         public IActionResult Index()
         {
-            return View(_context.Flights);
+            return View();
         }
         public IActionResult Privacy()
         {
